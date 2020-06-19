@@ -10,7 +10,9 @@ export default function Index({ allPosts }) {
           { allPosts.edges.map( post => (
             <li key={post.node.slug}>
               {post.node.title}
-              <Link href={`/posts/${post.node.slug}`}>Meow</Link>
+              <Link href={`/posts/${post.node.slug}`}>
+                <a>Meow</a>
+              </Link>
             </li>
           ))}
         </ul>

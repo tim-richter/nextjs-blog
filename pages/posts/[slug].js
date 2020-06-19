@@ -10,7 +10,6 @@ export default function Post({ data }) {
 };
 
 export async function getStaticProps({ preview = false, params }) {
-  console.log(params)
   const data = await getPostAndMorePosts(params.slug, false, null)
 
   return {
