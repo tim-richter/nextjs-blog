@@ -39,7 +39,7 @@ https://github.com/wp-api/node-wpapi
 ### GraphQL
 
 Use Queries to get exactly what you need from the backend.
-Queries should be created in lib/api.js
+Queries should be created in lib/api.ts
 
 A Query might look like this:
 ```javascript
@@ -57,7 +57,7 @@ const data = await fetchAPI(
     }
   )
 ```
-fetchAPI is also in lib/api.js and just sends the defined query to the wordpress grapqhl endpoint in the 
+fetchAPI is also in lib/api.ts and just sends the defined query to the wordpress grapqhl endpoint in the 
 correct format.
 
 A Query can also have variables like $id. Those are declared in the second object to "fetchAPI".

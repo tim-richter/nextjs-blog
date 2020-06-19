@@ -1,8 +1,9 @@
 import axios from 'axios'
+import { Types } from './api.types'
 
 const API_URL = process.env.WORDPRESS_GRAPHQL_URL
 
-async function fetchAPI(query, { variables } = {}) {
+async function fetchAPI(query, { variables = null } = {}) {
   const headers = { 'Content-Type': 'application/json' }
 
   if (process.env.WORDPRESS_AUTH_REFRESH_TOKEN) {
@@ -92,7 +93,7 @@ export async function getAllPostsForHome(preview) {
   return data.posts
 }
 
-export async function getPostAndMorePosts(slug, preview, previewData) {
+export async function getPostAndMorePosts(slug, preview, previewData): Promise<Types.getPostAndMorePostsResponse> {
   const postPreview = preview && previewData?.post
   // The slug may be the id of an unpublished post
   const isId = Number.isInteger(Number(slug))

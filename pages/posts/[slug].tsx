@@ -1,7 +1,12 @@
 import React from 'react'
 import {getAllPostsWithSlug, getPostAndMorePosts} from "../../lib/api";
+import * as ApiTypes from '../../lib/api.types'
 
-export default function Post({ data }) {
+interface Props {
+  data: ApiTypes.Types.getPostAndMorePostsResponse
+}
+
+export default function Post({ data }: Props) {
   return (
     <div>
       Post: {data.post.title}
