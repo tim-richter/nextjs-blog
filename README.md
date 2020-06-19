@@ -57,3 +57,21 @@ fetchAPI is also in lib/api.js and just sends the defined query to the wordpress
 correct format.
 
 A Query can also have variables like $id. Those are declared in the second object to "fetchAPI".
+
+## Environment Variables
+
+The .env file is only used by docker for wordpress!
+
+Environment Variables that are used by nextjs should go into .env.local. Next only loads from this file
+not .env
+
+By default all environment variables loaded through .env.local are only available in the Node.js environment, 
+meaning they won't be exposed to the browser.
+
+In order to expose a variable to the browser you can prefix the variable with NEXT_PUBLIC_. For example:
+```.env
+NEXT_PUBLIC_ANALYTICS_ID=abcdefghijk
+```
+
+This loads process.env.NEXT_PUBLIC_ANALYTICS_ID into the Node.js environment automatically so it can be used
+everywhere.
