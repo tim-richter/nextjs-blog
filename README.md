@@ -12,7 +12,11 @@
 IP=127.0.0.1
 DB_ROOT_PASSWORD=password
 DB_NAME=wordpress
-WORDPRESS_API_URL=http://127.0.0.1/graphql
+```
+- And a .env.local File
+```.env
+WORDPRESS_GRAPHQL_URL=http://127.0.0.1/graphql
+NEXT_PUBLIC_WORDPRESS_REST_URL=http://127.0.0.1/wp-json
 ```
 - Run docker-compose up to start the wordpress container
 - Wordpress automatically uses the data stored in wp-data ( you can run export.sh to store the current

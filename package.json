@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "store-db": "./export.sh",
-    "start": "next start"
+    "start": "next start",
+    "store-db": "scripts/export.sh"
   },
   "dependencies": {
     "axios": "^0.19.2",
