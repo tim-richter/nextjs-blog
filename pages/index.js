@@ -1,5 +1,8 @@
 import React, { Fragment } from 'react'
-import axios from 'axios'
+import WPAPI from 'wpapi'
+import config from '../config/config'
+
+const wp = new WPAPI({ endpoint: config.url })
 
 export default function Index({ posts }) {
 
@@ -20,11 +23,11 @@ export default function Index({ posts }) {
 }
 
 export async function getStaticProps() {
-  const response = await axios.get( 'http://127.0.0.1//wp-json/wp/v2/posts' )
+  const response = await wp.posts();
 
   return {
     props: {
-      posts: response.data
+      posts: response
     }
   }
 }
