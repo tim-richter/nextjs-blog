@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "store-db": "./export.sh",
     "start": "next start"
   },
   "dependencies": {
