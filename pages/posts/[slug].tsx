@@ -10,7 +10,8 @@ export default function Post({ data }: Props) {
   return (
     <>
       <h1>{data.post.title}</h1>
-      <img src={data.post.featuredImage.node.sourceUrl} alt="" style={{ width: 500}}/>
+      <small>Kategorien: {data.post.categories.edges.map( category => category.node.name)}</small>
+      <img src={data.post.featuredImage.node.sourceUrl} alt={data.post.featuredImage.node.altText} style={{ width: 500}}/>
 
       <section dangerouslySetInnerHTML={{ __html: data.post.content}} />
     </>

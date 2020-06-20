@@ -112,6 +112,7 @@ export async function getPostAndMorePosts(slug, preview, previewData): Promise<T
       featuredImage {
         node {
           sourceUrl
+          altText
         }
       }
       author {
@@ -123,6 +124,7 @@ export async function getPostAndMorePosts(slug, preview, previewData): Promise<T
         edges {
           node {
             name
+            slug
           }
         }
       }
