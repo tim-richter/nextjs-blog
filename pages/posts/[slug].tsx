@@ -8,9 +8,12 @@ interface Props {
 
 export default function Post({ data }: Props) {
   return (
-    <div>
-      Post: {data.post.title}
-    </div>
+    <>
+      <h1>{data.post.title}</h1>
+      <img src={data.post.featuredImage.node.sourceUrl} alt="" style={{ width: 500}}/>
+
+      <section dangerouslySetInnerHTML={{ __html: data.post.content}} />
+    </>
   );
 };
 
