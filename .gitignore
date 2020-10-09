@@ -1,7 +1,13 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # wordpress files
-wp-app
+wp-app/wp-admin
+wp-app/wp-includes
+wp-app/*.php
+wp-app/*.txt
+wp-app/*.html
+wp-app/wp-content/plugins
+wp-app/wp-content/uploads
 
 # dependencies
 /node_modules
