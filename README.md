@@ -32,6 +32,9 @@ database in wp-data)
 yarn dev
 ```
 
+- If you're having problems getting data from wordpress then plugins might have been deactived.
+Go to the admin plugins page and activate all plugins there
+
 ## Get into Wordpress Admin
 
 Since this is only a test repo there is only one user registered to enter wp-admin:
