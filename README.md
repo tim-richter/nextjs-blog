@@ -69,6 +69,9 @@ correct format.
 
 A Query can also have variables like $id. Those are declared in the second object to "fetchAPI".
 
+If you want to have a look at what's available you can visit the wordpress admin site and go to "GraphiQL" in the sidebar.
+Or just use this link: http://127.0.0.1/wp-admin/admin.php?page=wp-graphiql%2Fwp-graphiql.php
+
 ## Environment Variables
 
 The .env file is only used by docker for wordpress!
