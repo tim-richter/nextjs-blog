@@ -5,6 +5,12 @@
 - Headless Wordpress
 - GraphQL and REST
 
+
+## Features
+
+- Instant changes to the content when something changes in the backend (wordpress) without rebuilding
+all static pages manually
+
 ## Local Dev
 
 - Create a .env File in root with following Variables:
