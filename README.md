@@ -26,6 +26,13 @@ database in wp-data)
 yarn dev
 ```
 
+## Get into Wordpress Admin
+
+Since this is only a test repo there is only one user registered to enter wp-admin:
+
+Username: Tim.Richter
+Password: 1234
+
 ## Queries/API Calls
 
 There are 2 main ways to get data from wordpress:
