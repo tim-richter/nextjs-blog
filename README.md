@@ -1,9 +1,11 @@
 # Cat Cat Blog
 ![](https://media.giphy.com/media/CjmvTCZf2U3p09Cn0h/giphy.gif)
 
-- Next.js 
+- Next.js
 - Headless Wordpress
 - GraphQL and REST
+- Typescript
+- Styled Components
 
 
 ## Features
