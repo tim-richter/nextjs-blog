@@ -1,15 +1,21 @@
 import React from 'react'
 import {getAllPostsWithSlug, getPostAndMorePosts} from "../../lib/api";
 import * as ApiTypes from '../../lib/api.types'
+import styled from 'styled-components'
 
 interface Props {
   data: ApiTypes.Types.getPostAndMorePostsResponse
 }
 
+const Title = styled.h1`
+  font-size: 50px;
+  color: ${({ theme }) => theme.colors.primary};
+`
+
 export default function Post({ data }: Props) {
   return (
     <>
-      <h1>{data.post.title}</h1>
+      <Title>{data.post.title}</Title>
       <small>Kategorien: {data.post.categories.edges.map( category => category.node.name)}</small>
       { data.post?.featuredImage?.node?.sourceUrl && <img src={data.post.featuredImage.node.sourceUrl} alt={data.post.featuredImage.node.altText} style={{ width: 500}}/> }
 
