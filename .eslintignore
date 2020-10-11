@@ -1,0 +1,6 @@
+.idea
+.next
+config
+node_modules
+wp-app
+wp-data

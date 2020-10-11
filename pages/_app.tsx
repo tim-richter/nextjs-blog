@@ -1,7 +1,8 @@
+import React from "react";
 import '../styles/global.css'
 import '../styles/theme.css'
 import { createGlobalStyle, ThemeProvider } from "styled-components";
-import React from "react";
+import { AppProps } from 'next/app';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -18,7 +19,7 @@ const theme = {
 }
 
 // This default export is required in a new `pages/_app.js` file.
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <GlobalStyle />

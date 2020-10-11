@@ -1,15 +1,15 @@
 import axios from 'axios'
-import {Types} from './api.types'
 
 const API_URL = process.env.WORDPRESS_GRAPHQL_URL
 
 async function fetchAPI(query, { variables = null } = {}) {
-  const headers = { 'Content-Type': 'application/json' }
+  const headers = {
+    'Content-Type': 'application/json',
+    Authorization: null,
+  }
 
   if (process.env.WORDPRESS_AUTH_REFRESH_TOKEN) {
-    headers[
-      'Authorization'
-      ] = `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`
+    headers.Authorization = `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`
   }
 
   const res = await axios({
@@ -19,7 +19,7 @@ async function fetchAPI(query, { variables = null } = {}) {
       query,
       variables
     },
-    headers: headers
+    headers
   })
 
   if(res.data.errors) {
@@ -93,7 +93,7 @@ export async function getAllPostsForHome(preview) {
   return data.posts
 }
 
-export async function getPostAndMorePosts(slug, preview, previewData): Promise<Types.getPostAndMorePostsResponse> {
+export async function getPostAndMorePosts(slug, preview, previewData): Promise<getPostAndMorePostsResponse> {
   const postPreview = preview && previewData?.post
   // The slug may be the id of an unpublished post
   const isId = Number.isInteger(Number(slug))
@@ -180,7 +180,7 @@ export async function getPostAndMorePosts(slug, preview, previewData): Promise<T
  * Gets all pages/posts/categories etc. paths for sitemap
  */
 export async function getEveryPagePath() {
-  return await fetchAPI(`
+  return fetchAPI(`
     {
       posts {
         edges {

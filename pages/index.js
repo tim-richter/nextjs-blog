@@ -1,22 +1,22 @@
-import React, { Fragment } from 'react'
-import { getAllPostsForHome } from "../lib/api";
+import React from 'react'
 import Link from "next/link";
+import { getAllPostsForHome } from "../lib/api.ts";
 
-export default function Index({ allPosts }) {
+export default function Index({ allPosts }: any) {
   return (
-      <Fragment>
-        <h1>Our Posts Page!</h1>
-        <ul>
-          { allPosts.edges.map( post => (
-            <li key={post.node.slug}>
-              {post.node.title}
-              <Link href={`/posts/${post.node.slug}`}>
-                <a>Meow</a>
-              </Link>
-            </li>
+    <>
+      <h1>Our Posts Page!</h1>
+      <ul>
+        { allPosts.edges.map( post => (
+          <li key={post.node.slug}>
+            {post.node.title}
+            <Link href={`/posts/${post.node.slug}`}>
+              Meow
+            </Link>
+          </li>
           ))}
-        </ul>
-      </Fragment>
+      </ul>
+    </>
   )
 }
 
@@ -25,7 +25,7 @@ export async function getStaticProps({ preview = false }) {
 
   return {
     props: {
-      allPosts: allPosts
+      allPosts
     }
   }
 }
