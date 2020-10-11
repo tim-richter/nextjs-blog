@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { Types } from './api.types'
+import {Types} from './api.types'
 
 const API_URL = process.env.WORDPRESS_GRAPHQL_URL
 
@@ -174,4 +174,35 @@ export async function getPostAndMorePosts(slug, preview, previewData): Promise<T
   if (data.posts.edges.length > 2) data.posts.edges.pop()
 
   return data
+}
+
+/**
+ * Gets all pages/posts/categories etc. paths for sitemap
+ */
+export async function getEveryPagePath() {
+  return await fetchAPI(`
+    {
+      posts {
+        edges {
+          node {
+            uri
+          }
+        }
+      }
+      pages {
+        edges {
+          node {
+            uri
+          }
+        }
+      }
+      categories {
+        edges {
+          node {
+            uri
+          }
+        }
+      }
+    }
+  `)
 }
